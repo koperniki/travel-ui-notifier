@@ -1,0 +1,8 @@
+
+<ng-template ngFor let-state [ngForOf]="$transferData | async">
+  <button mat-raised-button class="center" color="warn"  [class.mat-warn]="state.state" (click)=onRelease(state.number)>
+    Кнопка: {{state.number}}; Время: {{state.time | date:'HH:mm':'+0700'}}; Локация: {{state.location}}
+  </button>
+</ng-template>
+
+
