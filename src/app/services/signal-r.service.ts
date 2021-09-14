@@ -16,7 +16,7 @@ export class SignalRService {
     return new Promise(resolve => {
       if (this.hubConnection === undefined || this.hubConnection.state != signalR.HubConnectionState.Connected ) {
         this.hubConnection = new signalR.HubConnectionBuilder()
-                                .withUrl('https://travel.neostk.com/api/state',{ skipNegotiation: true,transport: signalR.HttpTransportType.WebSockets})
+                                .withUrl('https://travel.neostk.com/api/hubs/state',{ skipNegotiation: true,transport: signalR.HttpTransportType.WebSockets})
                                 .configureLogging(signalR.LogLevel.Warning)
                                 .build();
     
